@@ -2,10 +2,10 @@ version: '3.7'
 services:
     redis:
         container_name: redis
-        image: redis:5.0.4
+        image: redis:5.0.5
         command: redis-server --save "" --appendonly no
-        volumes:
-            - ./data:/data
+        # volumes:
+        #     - ./data:/data
         ports:
             - 6379:6379
         networks:
