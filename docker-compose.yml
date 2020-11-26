@@ -2,10 +2,12 @@ version: '3.7'
 services:
     redis:
         container_name: redis
-        image: redis:6.0.5
-        command: redis-server --save "" --appendonly no
+        image: redis:6.0.9
+        command: redis-server --save "" --appendonly no --requirepass ${PASSWORD}
         ports:
             - 6379:6379
+        volumes:
+            - ./data:/data
         networks:
             - webnet
         logging:
