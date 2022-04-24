@@ -38,21 +38,6 @@ services:
                 max-file: '10'
         restart: always
 
-    redis-stat:
-        container_name: redis-stat
-        image: insready/redis-stat
-        command: --server redis:6379/${REDIS_PASSWORD}
-        ports:
-            - 8082:63790
-        networks:
-            - webnet
-        logging:
-            driver: 'json-file'
-            options:
-                max-size: '8m'
-                max-file: '10'
-        restart: always
-
 volumes:
     redis_data:
 
